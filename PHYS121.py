@@ -1316,6 +1316,10 @@ def printDigits():
 ###############################################################################       
 # Find the digit that was set to zero.
 def chase(Number):
+    length = len(Number) # Determine the length of Number.  Number is a string.
+    if Number[0] == '0':
+        Number = Number[1:length] # If Number has a leading zero, remove it
+    Number = int(Number) # Convert Number into an integer
     while Number >= 10:
         charList = list(str(Number)) # split numbers into individual string digits
         Number = 0
